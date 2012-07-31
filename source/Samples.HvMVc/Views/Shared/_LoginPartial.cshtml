@@ -1,0 +1,17 @@
+﻿@if (Request.IsAuthenticated)
+{
+<ul>
+    <li>
+        Hi, @Html.ActionLink((User as Samples.HvMvc.HVPrincipal).Name, "Details", "Account", routeValues: null, htmlAttributes: new { @class = "username" }) |
+    </li>
+    <li>
+        @Html.ActionLink("Log off", "LogOff", "Account")
+    </li>
+</ul>
+}
+else
+{
+    <ul>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
